@@ -17,12 +17,23 @@
             React.createElement('h1', {}, props.name),
             React.createElement('p', {}, props.job)
         ])
-        const App = () => React.createElement('div', {}, [
-            React.createElement('h1', {}, 'React is rendered'),
-            React.createElement(Person, { name: 'ali', job: 'developer' }),
-            React.createElement(Person, { name: 'reza', job: 'student' }),
-            React.createElement(Person),
-        ]);
+
+        class App extends React.Component {
+            render() {
+                return (React.createElement('div', {}, [
+                    React.createElement('h1', {}, 'React is rendered'),
+                    React.createElement(Person, { name: 'ali', job: 'developer' }),
+                    React.createElement(Person, { name: 'reza', job: 'student' }),
+                ]))
+            }
+        }
+
+        // const App = () => React.createElement('div', {}, [
+        //     React.createElement('h1', {}, 'React is rendered'),
+        //     React.createElement(Person, { name: 'ali', job: 'developer' }),
+        //     React.createElement(Person, { name: 'reza', job: 'student' }),
+        //     React.createElement(Person),
+        // ]);
         ReactDOM.render(React.createElement(App), document.getElementById('root'))
     </script>
 </body>

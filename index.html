@@ -13,7 +13,16 @@
     <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
     <script>
-        const App = () => React.createElement('div', {}, React.createElement('h1', {}, 'React is rendered'));
+        const Person = props => React.createElement('div', {}, [
+            React.createElement('h1', {}, props.name),
+            React.createElement('p', {}, props.job)
+        ])
+        const App = () => React.createElement('div', {}, [
+            React.createElement('h1', {}, 'React is rendered'),
+            React.createElement(Person, { name: 'ali', job: 'developer' }),
+            React.createElement(Person, { name: 'reza', job: 'student' }),
+            React.createElement(Person),
+        ]);
         ReactDOM.render(React.createElement(App), document.getElementById('root'))
     </script>
 </body>
